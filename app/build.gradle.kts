@@ -76,6 +76,7 @@ dependencies {
     implementation(libs.bundles.orbit)
     implementation(libs.bundles.navigation)
     implementation(libs.coil.image)
+    implementation(libs.seeker)
 
     kapt(libs.hilt.android.compiler)
     kapt(libs.androidx.hilt.compiler)
