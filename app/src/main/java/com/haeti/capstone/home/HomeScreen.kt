@@ -55,7 +55,7 @@ fun HomeScreen(
                 onClick = { navController.navigate(Screen.Main.route) },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 20.dp, vertical = 60.dp)
+                    .padding(horizontal = 20.dp, vertical = 40.dp)
                     .height(60.dp),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
