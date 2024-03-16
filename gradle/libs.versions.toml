@@ -1,5 +1,6 @@
 [versions]
 agp = "8.3.0"
+jetbrainsKotlinxSerializationJson = "1.4.1"
 kotlin = "1.9.22"
 coreKtx = "1.10.1"
 junit = "4.13.2"
@@ -16,6 +17,8 @@ hilt = "2.48"
 hiltCompiler = "1.1.0"
 hiltNavigationCompose = "1.2.0"
 gradle = "8.2.2"
+retrofit = "2.9.0"
+retrofit2KotlinxSerializationConverter = "1.0.0"
 timber = "5.0.1"
 seeker = "1.2.2"
 slider = "1.2.2"
@@ -43,6 +46,9 @@ hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", ve
 hilt-android-gradlePlugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+org-jetbrains-kotlinx-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "jetbrainsKotlinxSerializationJson" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 orbit-core = { group = "org.orbit-mvi", name = "orbit-core", version.ref = "orbitMVI" }

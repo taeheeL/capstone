@@ -88,6 +88,10 @@ dependencies {
     implementation(libs.seeker)
     implementation(libs.slider)
 
+    implementation(libs.retrofit)
+    implementation(libs.org.jetbrains.kotlinx.kotlinx.serialization.json)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+
     kapt(libs.hilt.android.compiler)
     kapt(libs.androidx.hilt.compiler)
 }
