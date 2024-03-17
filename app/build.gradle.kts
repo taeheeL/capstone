@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.serialization)
 }
 
 var properties = Properties()
@@ -91,6 +92,9 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.org.jetbrains.kotlinx.kotlinx.serialization.json)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
+
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
 
     kapt(libs.hilt.android.compiler)
     kapt(libs.androidx.hilt.compiler)
