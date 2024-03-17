@@ -1,4 +1,4 @@
-package com.haeti.capstone.ui.theme
+package com.haeti.capstone.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.haeti.capstone.main.components
+package com.haeti.capstone.presentation.main.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -15,13 +15,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.haeti.capstone.ui.theme.GrayButton
+import com.haeti.capstone.presentation.theme.GrayButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SegmentedButton(
     modifier: Modifier = Modifier,
-    onClick: () -> Unit,
+    onClick: (Int) -> Unit,
     options: List<String>,
 ) {
     var checkedItem by remember { mutableIntStateOf(0) }
@@ -36,7 +36,7 @@ fun SegmentedButton(
                 selected = index == checkedItem,
                 onClick = {
                     checkedItem = index
-                    onClick()
+                    onClick(index)
                 },
                 shape = SegmentedButtonDefaults.itemShape(
                     index = index,

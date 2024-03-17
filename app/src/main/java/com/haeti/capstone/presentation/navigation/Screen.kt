@@ -1,4 +1,4 @@
-package com.haeti.capstone.navigation
+package com.haeti.capstone.presentation.navigation
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")

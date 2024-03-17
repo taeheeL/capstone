@@ -1,4 +1,4 @@
-package com.haeti.capstone.main.components
+package com.haeti.capstone.presentation.main.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.haeti.capstone.ui.theme.Slider
+import com.haeti.capstone.presentation.theme.Slider
 import com.smarttoolfactory.slider.LabelPosition
 import com.smarttoolfactory.slider.MaterialSliderDefaults
 import com.smarttoolfactory.slider.SliderBrushColor

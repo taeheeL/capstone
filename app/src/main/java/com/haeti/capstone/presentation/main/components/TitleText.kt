@@ -1,4 +1,4 @@
-package com.haeti.capstone.main.components
+package com.haeti.capstone.presentation.main.components
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

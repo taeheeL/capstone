@@ -1,4 +1,4 @@
-package com.haeti.capstone.home
+package com.haeti.capstone.presentation.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -29,13 +29,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.haeti.capstone.R
-import com.haeti.capstone.main.MainViewModel
-import com.haeti.capstone.navigation.Screen
-import com.haeti.capstone.ui.theme.BlackGray
+import com.haeti.capstone.presentation.navigation.Screen
+import com.haeti.capstone.presentation.theme.BlackGray
 
 @Composable
 fun HomeScreen(
-    mainViewModel: MainViewModel,
     navController: NavController
 ) {
     Scaffold {
@@ -92,5 +90,5 @@ fun HomeScreen(
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun HomeScreenPreview() {
-    HomeScreen(mainViewModel = MainViewModel(), navController = rememberNavController())
+    HomeScreen(navController = rememberNavController())
 }
