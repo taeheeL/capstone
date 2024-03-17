@@ -1,4 +1,4 @@
-package com.haeti.capstone.main.components
+package com.haeti.capstone.presentation.main.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -20,8 +20,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.haeti.capstone.ui.theme.GrayField
-import com.haeti.capstone.ui.theme.HintText
+import com.haeti.capstone.presentation.theme.GrayField
+import com.haeti.capstone.presentation.theme.HintText
 
 @Composable
 fun GrayTextField(
