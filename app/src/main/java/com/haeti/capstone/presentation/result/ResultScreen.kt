@@ -1,5 +1,7 @@
 package com.haeti.capstone.presentation.result
 
+import android.net.Uri
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,7 +22,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,9 +39,11 @@ import com.haeti.capstone.presentation.theme.BlackGray
 
 @Composable
 fun ResultScreen(
-    navController: NavController
+    navController: NavController,
 ) {
+
     val resultViewModel: ResultViewModel = viewModel()
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -49,10 +55,43 @@ fun ResultScreen(
         Spacer(modifier = Modifier.weight(1f))
 
         Button(
+            onClick = {
+                CustomTabsIntent.Builder().build().run {
+                    launchUrl(
+                        context, Uri.parse(
+                            context.getString(
+                                R.string.national_health_portal_link
+                            )
+                        )
+                    )
+                }
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 10.dp)
+                .height(60.dp),
+            border = ButtonDefaults.outlinedButtonBorder.copy(
+                width = 2.dp
+            ),
+            shape = RoundedCornerShape(12.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.White,
+                contentColor = Color.Black,
+            )
+        ) {
+            Text(
+                text = "More Information", style = MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp
+                )
+            )
+        }
+
+        Button(
             onClick = { navController.navigate(Screen.Home.route) },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 20.dp, vertical = 40.dp)
+                .padding(start = 20.dp, end = 20.dp, bottom = 20.dp)
                 .height(60.dp),
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.buttonColors(
@@ -82,15 +121,17 @@ fun ResultScreen(
             if (resultViewModel.result == 0) {
                 Image(
                     modifier = Modifier
-                        .size(300.dp)
-                        .padding(bottom = 80.dp),
+                        .size(250.dp)
+                        .padding(bottom = 10.dp),
                     painter = painterResource(id = R.drawable.img_healthy),
                     contentDescription = null,
                 )
 
                 Text(
-                    text = "You are healthy!",
-                    textAlign = TextAlign.Center
+                    text = context.getString(R.string.healthy_pharse),
+                    textAlign = TextAlign.Start,
+                    modifier = Modifier.padding(start = 20.dp, end = 20.dp, bottom = 50.dp),
+                    style = MaterialTheme.typography.bodyMedium
                 )
             } else {
                 Image(
@@ -102,7 +143,7 @@ fun ResultScreen(
                 )
 
                 Text(
-                    text = "You are in Danger",
+                    text = stringResource(R.string.danger_pharse),
                     textAlign = TextAlign.Center
                 )
             }

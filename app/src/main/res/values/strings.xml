@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Lipi Checker</string>
+    <string name="national_health_portal_link">https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5211</string>
+    <string name="healthy_pharse">You\'re healthy now! \n\nTo stay healthy in the future,\n\n- Avoid consuming too much energy.\n- Avoid eating too many carbohydrates and saturated fatty acids.\n- Eat plenty of unsaturated fatty acid-rich fish and fiber-rich vegetables.</string>
+    <string name="danger_pharse">You\'re in danger now!\n\nTo be healthy,\n\n- Avoid consuming too much energy.\n- Avoid eating too many carbohydrates and saturated fatty acids.\n- Eat plenty of unsaturated fatty acid-rich fish and fiber-rich vegetables.</string>
 </resources>
