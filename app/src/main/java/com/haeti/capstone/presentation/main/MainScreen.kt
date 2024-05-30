@@ -163,7 +163,7 @@ fun MainScreen(
     mainViewModel.collectSideEffect {
         when (it) {
             is MainSideEffect.NavigateToResult -> {
-                navController.navigate(Screen.Result.route)
+                navController.navigate(Screen.Result.createRoute(result = it.result))
             }
 
             is MainSideEffect.ErrorToast -> {

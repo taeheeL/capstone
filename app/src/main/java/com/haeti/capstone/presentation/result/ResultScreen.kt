@@ -40,6 +40,7 @@ import com.haeti.capstone.presentation.theme.BlackGray
 @Composable
 fun ResultScreen(
     navController: NavController,
+    result: Int
 ) {
 
     val resultViewModel: ResultViewModel = viewModel()
@@ -118,7 +119,7 @@ fun ResultScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            if (resultViewModel.result == 0) {
+            if (result == 0) {
                 Image(
                     modifier = Modifier
                         .size(250.dp)
@@ -155,5 +156,5 @@ fun ResultScreen(
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun ResultScreenPreview() {
-    ResultScreen(navController = rememberNavController())
+    ResultScreen(navController = rememberNavController(), result = 0)
 }
