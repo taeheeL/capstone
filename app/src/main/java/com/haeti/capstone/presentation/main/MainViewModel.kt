@@ -67,15 +67,27 @@ class MainViewModel @Inject constructor(
     fun predict() = intent {
         Timber.e("age: ${state.age}, waistline: ${state.waistline}, height: ${state.height}, weight: ${state.weight}, smoking: ${state.smoking}, drinking: ${state.drinking},")
         viewModelScope.launch {
-            val result = predictRepository.postMainData(
-                age = state.age,
-                waistline = state.waistline?.toFloatOrNull() ?: 0f,
+//            val result = predictRepository.postMainData(
+//                age = state.age,
+//                waistline = state.waistline?.toFloatOrNull() ?: 0f,
+//                height = state.height?.toFloatOrNull() ?: 0f,
+//                weight = state.weight?.toFloatOrNull() ?: 0f,
+//                smoking = state.smoking,
+//                drinking = state.drinking,
+//                sex = state.sex
+//            )
+
+            val bmi = calculateBmi(
                 height = state.height?.toFloatOrNull() ?: 0f,
-                weight = state.weight?.toFloatOrNull() ?: 0f,
-                smoking = state.smoking,
-                drinking = state.drinking,
-                sex = state.sex
+                weight = state.weight?.toFloatOrNull() ?: 0f
             )
+
+            val result = when {
+                (bmi >= 23f && state.drinking > 0 && state.smoking < 1) -> 1
+                (bmi >= 25f && (state.drinking > 0 || state.smoking < 1)) -> 1
+                (bmi >= 30f) -> 1
+                else -> 0
+            }
 
             if (result == -1) {
                 postSideEffect(MainSideEffect.ErrorToast)
@@ -84,6 +96,14 @@ class MainViewModel @Inject constructor(
                 savedStateHandle["result"] = result
             }
         }
+    }
+}
+
+fun calculateBmi(height: Float, weight: Float): Float {
+    return if (height > 0) {
+        weight / (height * height)
+    } else {
+        0f
     }
 }
 
